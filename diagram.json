@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "PBL Project",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd", "top": -200, "left": 250, "attrs": { "pins": "i2c" } },
+    { "type": "chip-max30102", "id": "max", "top": 130, "left": 340, "attrs": {} },
+    { "type": "chip-battery", "id": "bat", "top": -150, "left": -420, "attrs": {} },
+    { "type": "wokwi-slide-switch", "id": "sw", "top": -110, "left": -290, "attrs": { "value": "1" } },
+    { "type": "chip-buck", "id": "buck", "top": -160, "left": -170, "attrs": {} },
+    { "type": "wokwi-resistor", "id": "r1", "top": -60, "left": -110, "rotate": 90, "attrs": { "value": "330" } },
+    { "type": "wokwi-led", "id": "led", "top": 20, "left": -100, "attrs": { "color": "green" } }
+  ],
+  "connections": [
+    [ "bat:POS", "sw:2", "red", [] ],
+    [ "sw:3", "buck:VIN", "red", [] ],
+    [ "bat:NEG", "buck:GND", "black", [] ],
+    [ "buck:GND", "uno:GND.2", "black", [] ],
+    [ "buck:VOUT", "uno:5V", "orange", [] ],
+    [ "buck:VOUT", "lcd:VCC", "orange", [] ],
+    [ "buck:VOUT", "max:VCC", "orange", [] ],
+    [ "buck:VOUT", "r1:1", "orange", [] ],
+    [ "r1:2", "led:A", "orange", [] ],
+    [ "led:C", "uno:GND.2", "black", [] ],
+    [ "lcd:GND", "uno:GND.1", "black", [] ],
+    [ "max:GND", "uno:GND.3", "black", [] ],
+    [ "lcd:SDA", "uno:A4", "green", [] ],
+    [ "lcd:SCL", "uno:A5", "blue", [] ],
+    [ "max:SDA", "uno:A4", "green", [] ],
+    [ "max:SCL", "uno:A5", "blue", [] ]
+  ],
+  "dependencies": {}
+}

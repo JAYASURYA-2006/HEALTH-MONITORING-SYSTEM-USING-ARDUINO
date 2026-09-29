@@ -1,0 +1,6 @@
+{
+  "name": "BUCK 11.1V to 5V",
+  "author": "PBL Project",
+  "pins": ["VIN", "GND", "VOUT"],
+  "controls": []
+} 

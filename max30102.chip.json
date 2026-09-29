@@ -1,0 +1,6 @@
+{
+  "name": "MAX30102",
+  "author": "PBL Project",
+  "pins": ["SCL", "SDA", "VCC", "GND", "INT"],
+  "controls": []
+}

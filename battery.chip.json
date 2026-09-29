@@ -1,0 +1,6 @@
+{
+  "name": "3x 3.7V BATTERY",
+  "author": "PBL Project",
+  "pins": ["POS", "NEG"],
+  "controls": []
+}
